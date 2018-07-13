@@ -1,15 +1,15 @@
 console.log("hi");
 // var count=0;
 class Game {
-    constructor(canvas) {
-        this.canvas = canvas;
-        this.screen = canvas.getContext("2d");
-        this.player = new Player(this);
-        this.coin = new Coin(this);
-        this.badCoin = new BadCoin(this);
-        this.badCoinB = new BadCoinB(this);
-    }
-    draw() {
+  constructor (canvas) {
+    this.canvas = canvas
+    this.screen = canvas.getContext('2d')
+    this.player = new Player(this)
+    this.coin = new Coin(this)
+    this.badCoin = new BadCoin(this)
+    this.badCoinB = new BadCoinB(this)
+  }
+  draw() {
         this.screen.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.screen.strokeStyle = "#FF0000";
         this.screen.lineWidth = 10;
