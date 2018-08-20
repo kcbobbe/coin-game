@@ -29,6 +29,11 @@ class Game {
 
   update () {
     this.player.update()
+    var count = document.getElementById('counter')
+    var hi = document.getElementById('highScore')
+    if (Number(count.innerText) > Number(hi.innerText)) {
+      hi.innerText = count.innerText
+    }
 
     // put this into badcoin update
     this.badCoin.location.y += 3
@@ -42,21 +47,18 @@ class Game {
     }
 
     if (colliding(this.coin.location, this.player.location)) {
-      var count = document.getElementById('counter')
       count.innerText = parseInt(count.innerText) + 1
       console.log(count)
       this.coin.update()
     }
 
     if (colliding(this.badCoin.location, this.player.location)) {
-      var count = document.getElementById('counter')
       count.innerText = 0
       console.log(count)
       this.badCoin.update()
     }
 
     if (colliding(this.badCoinB.location, this.player.location)) {
-      var count = document.getElementById('counter')
       count.innerText = 0
       console.log(count)
       this.badCoinB.update()
